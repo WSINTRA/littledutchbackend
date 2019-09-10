@@ -1,24 +1,26 @@
-# README
+https://github.com/WSINTRA/little-dutch-coffee-shop-remake
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails backend
 
-Things you may want to cover:
+Users___
+A user can login, save a shopping cart, view previous purchases, leave reviews and add products to a user list.
+A user has a name, a password, an address, an email, an avatar, reviews, purchases, carts, lists belong to user
+rails generate model User username password_digest address:text state city email avatar review:references
 
-* Ruby version
+Products___
+A product has a title, a rating, a description, a price, image, many reviews, can belong to a user list,
+A product can be listed in the weekly menu or not. A product can be purchased. 
+rails generate model Product title rating:integer description:text price:decimal image in_menu:boolean
 
-* System dependencies
+Orders___
+An order belongs to a User and contains cart products, Cart products are purchased and once purchase become the order. A user can have many orders. An order has many products through purchases. 
+rails generate model Order user:references quantity:integer
 
-* Configuration
+Purchase___
+A purchase belongs to a user and an order.
+rails generate model Purchase order:references product:references
 
-* Database creation
+Review___
+A review belongs to a user and a product. Has a title and content.
+rails generate model Review user:references product:references title content
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
