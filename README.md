@@ -37,3 +37,35 @@ Review___
 A review belongs to a user and a product. Has a title and content.
 rails generate model Review user:references product:references title content:text
 
+
+//////////////////DEMO FETCH REQUESTs//////////////////
+fetch('http://localhost:3000/v1/users', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    Accept: 'application/json'
+  },
+  body: JSON.stringify({
+    user: {
+      username: 'guy',
+      password: 'hi',
+      address: 'King of Flavortown, USA',
+      state: 'NY',
+      city: 'New York',
+      email:'someplace@home.com',
+      staff: false
+      avatar: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Guy_Fieri_at_Guantanamo_2.jpg'
+    }
+  })
+})
+  .then(r => r.json())
+  .then(console.log)
+  //////////////////////////////////////////////////
+  fetch('http://localhost:3000/api/v1/profile', {
+  method: 'GET',
+  headers: {
+    Authorization: `Bearer <token>`
+  }
+})
+//////////////////////////////////////////////////////
+
