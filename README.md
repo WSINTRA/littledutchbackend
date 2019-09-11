@@ -5,16 +5,29 @@ Rails backend
 Users___
 A user can login, save a shopping cart, view previous purchases, leave reviews and add products to a user list.
 A user has a name, a password, an address, an email, an avatar, reviews, purchases, carts, lists belong to user
-rails generate model User username password_digest address:text state city email avatar review:references
+rails generate model User username password_digest address:text state city email avatar review:references staff:boolean
+
+Staff___
+Staff can login, add new products, change the weekly menu, if admin they can create new staff.
+To make a purchase they must also have a user account, with that they get a discount, auto applied.
+rails generate model Staff username password_digest email admin:boolean
 
 Products___
 A product has a title, a rating, a description, a price, image, many reviews, can belong to a user list,
 A product can be listed in the weekly menu or not. A product can be purchased. 
-rails generate model Product title rating:integer description:text price:decimal image in_menu:boolean
+rails generate model Product title rating:integer breed description:text price:decimal image in_menu:boolean
+
+Cart___
+A cart belongs to a user, a user can have many carts, a cart has many products. An order has one cart. 
+rails generate model Cart user:references product:references 
+
+Cart_products____
+A join table for products in the cart
+rails generate model Cart_Product cart:references product:references
 
 Orders___
 An order belongs to a User and contains cart products, Cart products are purchased and once purchase become the order. A user can have many orders. An order has many products through purchases. 
-rails generate model Order user:references quantity:integer
+rails generate model Order user:references quantity:integer total:decimal
 
 Purchase___
 A purchase belongs to a user and an order.
@@ -22,5 +35,5 @@ rails generate model Purchase order:references product:references
 
 Review___
 A review belongs to a user and a product. Has a title and content.
-rails generate model Review user:references product:references title content
+rails generate model Review user:references product:references title content:text
 
