@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 2019_09_11_203442) do
     t.text "address"
     t.string "state"
     t.string "city"
+    t.string "zip"
     t.string "email"
     t.string "avatar"
     t.boolean "staff"
