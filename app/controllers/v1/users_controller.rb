@@ -1,8 +1,12 @@
 class V1::UsersController < ApplicationController
 	skip_before_action :authorized, only: [:create]
-    
-    def index
-    render json: { user: UserSerializer.new(current_user) }, status: :accepted
+    # validates :username, presence: true, uniqueness: true
+    # validates :username, uniqueness: { case_sensitive: false }
+    # validates :email, uniqueness: true, presence: true, format: { with: /\S+@\S+\.\S+/ }
+    # after_create :send_welcome_email
+
+	def profile
+	    render json: { user: UserSerializer.new(current_user) }, status: :accepted
 	end
 	
 	def create
@@ -15,9 +19,13 @@ class V1::UsersController < ApplicationController
 		status: :not_acceptable
 		end
 	end
+
 	private
+
+	 	def send_welcome_email
+	 		Notification.new_account(self).deliver_later
+	 	end
 		def user_params
-		params.require(:user).permit(:username, :password, :address, :state, :city, :avatar, :staff)
+		params.require(:user).permit(:username, :password, :address, :state, :city, :email, :zip)
 		end
-	end
 end
