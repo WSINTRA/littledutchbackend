@@ -1,16 +1,23 @@
 class V1::ProductsController < ApplicationController
 skip_before_action :authorized, only: [:index]
 	def create
-		binding.pry
+		
+        @new_product = Product.create(product_params)
+
+        render json: @new_product
 	end
 
 	def index
-		
 		@products = Product.all
 		render json: @products
 	end
 
 	def update
 		binding.pry
+	end
+    
+    private
+	def product_params
+		params.require(:product).permit(:title, :rating, :description, :price, :image, :in_menu)
 	end
 end
