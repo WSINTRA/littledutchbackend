@@ -3,7 +3,6 @@ skip_before_action :authorized, only: [:index]
 	def create
 		
         @new_product = Product.create(product_params)
-
         render json: @new_product
 	end
 
