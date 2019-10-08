@@ -1,8 +1,8 @@
 class V1::ProductsController < ApplicationController
 skip_before_action :authorized, only: [:index]
+
 	def create
-		
-        @new_product = Product.create(product_params)
+		@new_product = Product.create(product_params)
         render json: @new_product
 	end
 
@@ -12,7 +12,10 @@ skip_before_action :authorized, only: [:index]
 	end
 
 	def update
-		binding.pry
+		
+		product_to_edit = Product.find(params["id"])
+		product_to_edit.update_attributes(product_params)
+		render json: product_to_edit
 	end
     
     private
