@@ -12,7 +12,6 @@ skip_before_action :authorized, only: [:index]
 	end
 
 	def update
-		
 		product_to_edit = Product.find(params["id"])
 		product_to_edit.update_attributes(product_params)
 		render json: product_to_edit

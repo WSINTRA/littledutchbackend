@@ -5,5 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create(username: "william_admin", password: "p455w0rd", staff: true, zip: "11216", email: "will.simpson85@gmail.com")
+require 'faker'
+
+
+30.times do 
+	Product.create(
+		title: Faker::Cannabis.strain, 
+		image: "https://gameupnutrition.com/wp-content/uploads/2019/01/IMG_2529.png" ,
+		rating: rand(1..5),
+		breed: Faker::Cannabis.type,
+		in_menu: Faker::Boolean.boolean,
+		price: rand(20..100),
+		description: (Faker::Cannabis.health_benefit + ". Aka, " + Faker::Cannabis.medical_use ) )
+end
+
 
