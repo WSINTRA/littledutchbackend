@@ -1,6 +1,20 @@
 https://github.com/WSINTRA/little-dutch-coffee-shop-remake
 
+Download frontend
+>git clone https://github.com/WSINTRA/little-dutch-coffee-shop-remake
+>cd little-dutch-coffee-shop-remake
+>npm install
+>npm start
+
 Rails backend
+>git clone https://github.com/WSINTRA/littledutchbackend
+>cd littledutchbackend
+>bundle install
+DB is setup to work with PostgreSQL,
+>rails db:create
+>rails db:migrate
+>rails db:seed
+>rails s -p 3050
 
 Users___
 A user can login, save a shopping cart, view previous purchases, leave reviews and add products to a user list.
@@ -39,6 +53,7 @@ rails generate model Review user:references product:references title content:tex
 
 
 //////////////////DEMO FETCH REQUESTs//////////////////
+```javascript
 fetch('http://localhost:3000/v1/users', {
   method: 'POST',
   headers: {
@@ -67,5 +82,6 @@ fetch('http://localhost:3000/v1/users', {
     Authorization: `Bearer <token>`
   }
 })
+```
 //////////////////////////////////////////////////////
 
