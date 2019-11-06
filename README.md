@@ -2,8 +2,11 @@ https://github.com/WSINTRA/little-dutch-coffee-shop-remake
 
 Download frontend
 >git clone https://github.com/WSINTRA/little-dutch-coffee-shop-remake
+
 >cd little-dutch-coffee-shop-remake
+
 >npm install
+
 >npm start
 
 Rails backend
