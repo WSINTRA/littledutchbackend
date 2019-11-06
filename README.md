@@ -11,12 +11,19 @@ Download frontend
 
 Rails backend
 >git clone https://github.com/WSINTRA/littledutchbackend
+
 >cd littledutchbackend
+
 >bundle install
+
 DB is setup to work with PostgreSQL,
+
 >rails db:create
+
 >rails db:migrate
+
 >rails db:seed
+
 >rails s -p 3050
 
 Users___
