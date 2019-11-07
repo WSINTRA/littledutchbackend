@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  namespace :v1 do
+    get 'admin_menu/sales'
+    get 'admin_menu/orders'
+    get 'admin_menu/customers'
+    get 'admin_menu/employees'
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
     namespace :v1 do
 	resources :users, only: [:create, :update, :show]
