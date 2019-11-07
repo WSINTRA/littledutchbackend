@@ -26,6 +26,20 @@ DB is setup to work with PostgreSQL,
 
 >rails s -p 3050
 
+
+-- Make sure you run rails console and create a new user to be admin, like so..
+
+```
+User.create(
+username: "Admin", 
+password_digest: "p455w0rd",address: Faker::Address.street_address,
+    state: Faker::Address.state,
+    city: Faker::Address.city,
+    zip: Faker::Address.zip,
+    email: Faker::Internet.free_email,
+    avatar: "https://cdn0.iconfinder.com/data/icons/cannabis-emoji/512/cannabis-18-512.png")
+    ```
+
 Users___
 A user can login, save a shopping cart, view previous purchases, leave reviews and add products to a user list.
 A user has a name, a password, an address, an email, an avatar, reviews, purchases, carts, lists belong to user

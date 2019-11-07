@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 require 'faker'
 
 
@@ -20,3 +21,22 @@ require 'faker'
 end
 
 
+
+10.times do
+	User.create(
+		username: Faker::Name.first_name,
+		password_digest: "p455w0rd",
+		address: Faker::Address.street_address,
+		state: Faker::Address.state,
+		city: Faker::Address.city,
+		zip: Faker::Address.zip,
+		email: Faker::Internet.free_email,
+		avatar: "https://cdn0.iconfinder.com/data/icons/cannabis-emoji/512/cannabis-18-512.png" )
+end
+
+User.create(username: "Admin", password_digest: "p455w0rd",address: Faker::Address.street_address,
+		state: Faker::Address.state,
+		city: Faker::Address.city,
+		zip: Faker::Address.zip,
+		email: Faker::Internet.free_email,
+		avatar: "https://cdn0.iconfinder.com/data/icons/cannabis-emoji/512/cannabis-18-512.png")

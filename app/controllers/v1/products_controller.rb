@@ -19,6 +19,6 @@ skip_before_action :authorized, only: [:index]
     
     private
 	def product_params
-		params.require(:product).permit(:title, :rating, :description, :price, :image, :in_menu)
+		params.require(:product).permit(:title, :breed, :rating, :description, :price, :image, :in_menu)
 	end
 end
