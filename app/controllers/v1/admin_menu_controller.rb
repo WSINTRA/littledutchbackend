@@ -3,6 +3,8 @@ class V1::AdminMenuController < ApplicationController
   end
 
   def orders
+    @all_orders = Order.all
+    render json: @all_orders
   end
 
   def customers
