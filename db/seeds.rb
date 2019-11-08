@@ -34,7 +34,7 @@ end
 		avatar: "https://cdn0.iconfinder.com/data/icons/cannabis-emoji/512/cannabis-18-512.png" )
 end
 
-User.create(username: "Admin", password_digest: "p455w0rd",address: Faker::Address.street_address,
+User.create(username: "Admin", password: "p455w0rd",address: Faker::Address.street_address,
 		state: Faker::Address.state,
 		city: Faker::Address.city,
 		zip: Faker::Address.zip,

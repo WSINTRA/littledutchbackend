@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   namespace :v1 do
+    resources :orders, only: [:create, :update, :show]
+    post 'orders/newOrder'
+    get 'orders/allOrders'
+  end
+  namespace :v1 do
     get 'admin_menu/sales'
     get 'admin_menu/orders'
     get 'admin_menu/customers'
