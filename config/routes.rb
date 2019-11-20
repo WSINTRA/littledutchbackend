@@ -14,7 +14,7 @@ Rails.application.routes.draw do
       patch '/update_products', to: 'products#update'
       resources :review, only: [:create, :update, :show]
        post 'review/new'
-       patch 'review/edit'
+       patch 'review/update'
       delete 'review/delete'
       resources :admin_menu, only: [:show]
           get 'admin_menu/sales'
