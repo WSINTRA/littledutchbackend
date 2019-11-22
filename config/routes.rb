@@ -12,15 +12,15 @@ Rails.application.routes.draw do
       post '/new_product', to: 'products#create'
       get '/all_products', to: 'products#index'
       patch '/update_products', to: 'products#update'
-      resources :review, only: [:create, :update, :show]
+      resources :review, only: [:post, :patch, :delete]
        post 'review/new'
        patch 'review/update'
       delete 'review/delete'
-      resources :admin_menu, only: [:show]
+      resources :admin_menu, only: [:create, :update, :index]
           get 'admin_menu/sales'
-    get 'admin_menu/orders'
-    get 'admin_menu/customers'
-    get 'admin_menu/employees'
+          get 'admin_menu/orders'
+          get 'admin_menu/customers'
+          post 'admin_menu/employees'
     end
 
 end

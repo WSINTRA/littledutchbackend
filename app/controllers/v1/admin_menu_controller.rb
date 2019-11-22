@@ -13,5 +13,14 @@ class V1::AdminMenuController < ApplicationController
   end
 
   def employees
+    @new_employee = User.create(employee_params)
+    render json: @new_employee
   end
+
+  private 
+
+  def employee_params
+    params.require(:user).permit(:username, :password, :address, :state, :city, :email, :zip, :staff)
+  end
+
 end

@@ -11,13 +11,13 @@ require 'faker'
 
 30.times do 
 	Product.create(
-		title: Faker::Cannabis.strain, 
-		image: "https://gameupnutrition.com/wp-content/uploads/2019/01/IMG_2529.png" ,
+		title: Faker::Coffee.blend_name, 
+		image: "https://images-na.ssl-images-amazon.com/images/I/81DLJc5I5XL._SL1280_.jpg" ,
 		rating: rand(1..5),
-		breed: Faker::Cannabis.type,
+		breed: Faker::Coffee.origin,
 		in_menu: Faker::Boolean.boolean,
 		price: rand(20..100),
-		description: (Faker::Cannabis.health_benefit + ". Aka, " + Faker::Cannabis.medical_use ) )
+		description: (Faker::Coffee.notes + ". From variety, " + Faker::Coffee.variety ) )
 end
 
 
@@ -25,13 +25,13 @@ end
 10.times do
 	User.create(
 		username: Faker::Name.first_name,
-		password_digest: "p455w0rd",
+		password: "p455w0rd",
 		address: Faker::Address.street_address,
 		state: Faker::Address.state,
 		city: Faker::Address.city,
 		zip: Faker::Address.zip,
 		email: Faker::Internet.free_email,
-		avatar: "https://cdn0.iconfinder.com/data/icons/cannabis-emoji/512/cannabis-18-512.png" )
+		avatar: "https://img.huffingtonpost.com/asset/5819e8c9190000a304c30664.jpeg" )
 end
 
 User.create(username: "Admin", password: "p455w0rd",address: Faker::Address.street_address,

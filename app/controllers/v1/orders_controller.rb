@@ -16,5 +16,6 @@ class V1::OrdersController < ApplicationController
   end
 
   def allOrders
+    binding.pry
   end
 end
