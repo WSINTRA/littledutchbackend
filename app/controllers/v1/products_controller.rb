@@ -16,6 +16,12 @@ skip_before_action :authorized, only: [:index]
 		product_to_edit.update_attributes(product_params)
 		render json: product_to_edit
 	end
+
+	def delete
+		products_to_delete = params["id_array"]
+		Product.destroy(products_to_delete)
+		render json: @products
+	end
     
     private
 	def product_params
