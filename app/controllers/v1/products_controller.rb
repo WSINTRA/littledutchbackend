@@ -18,6 +18,7 @@ skip_before_action :authorized, only: [:index]
 	end
 
 	def delete
+		# @products = Product.all
 		products_to_delete = params["id_array"]
 		Product.destroy(products_to_delete)
 		render json: @products

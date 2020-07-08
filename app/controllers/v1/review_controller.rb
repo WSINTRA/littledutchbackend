@@ -1,8 +1,7 @@
 class V1::ReviewController < ApplicationController
   def new
-
    new_review = Review.create(review_params)
-    render json: new_review
+   render json: new_review
   end
 
   def update

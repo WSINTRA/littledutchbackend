@@ -9,7 +9,7 @@
 require 'faker'
 
 
-30.times do 
+10.times do 
 	Product.create(
 		title: Faker::Coffee.blend_name, 
 		image: "https://images-na.ssl-images-amazon.com/images/I/81DLJc5I5XL._SL1280_.jpg" ,
