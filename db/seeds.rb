@@ -22,17 +22,17 @@ end
 
 
 
-10.times do
-	User.create(
-		username: Faker::Name.first_name,
-		password: "p455w0rd",
-		address: Faker::Address.street_address,
-		state: Faker::Address.state,
-		city: Faker::Address.city,
-		zip: Faker::Address.zip,
-		email: Faker::Internet.free_email,
-		avatar: "https://img.huffingtonpost.com/asset/5819e8c9190000a304c30664.jpeg" )
-end
+# 10.times do
+# 	User.create(
+# 		username: Faker::Name.first_name,
+# 		password: "p455w0rd",
+# 		address: Faker::Address.street_address,
+# 		state: Faker::Address.state,
+# 		city: Faker::Address.city,
+# 		zip: Faker::Address.zip,
+# 		email: Faker::Internet.free_email,
+# 		avatar: "https://img.huffingtonpost.com/asset/5819e8c9190000a304c30664.jpeg" )
+# end
 
 User.create(username: "Admin", password: "p455w0rd",address: Faker::Address.street_address,
 		state: Faker::Address.state,
