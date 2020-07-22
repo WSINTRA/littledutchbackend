@@ -5,7 +5,7 @@ class V1::ReviewController < ApplicationController
   end
 
   def update
-  	
+  
     id = params["review_id"]
     review_for_edit = Review.find(id)
     review_for_edit.update(review_params)
